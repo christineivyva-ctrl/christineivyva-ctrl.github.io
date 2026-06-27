@@ -1577,3 +1577,72 @@ footer {
   }
 }
 /* (legacy .floating-whatsapp rule removed — replaced by .floating-wa above) */
+/* ══════════════════════════════════════════
+   CASE STUDY PAGE
+══════════════════════════════════════════ */
+
+.case-study {
+  padding: 100px 20px;
+  background: #f8f6f2;
+  min-height: 100vh;
+}
+
+.case-study .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.case-study h1 {
+  font-size: 52px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: #111;
+  font-weight: 600;
+}
+
+.case-study img {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.case-study h2 {
+  font-size: 28px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.case-study p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.case-study ul {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.case-study li {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.case-study a {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 14px 24px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.case-study a:hover {
+  transform: translateY(-2px);
+}
