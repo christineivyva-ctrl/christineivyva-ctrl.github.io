@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- UPDATED: description, OG, and Twitter tags now lead with Executive Assistant | Founder Support | Business Operations instead of "Virtual Assistant" -->
+  <meta name="description" content="Executive Assistant & Founder Support specialist with 7+ years building systems, CRM workflows, and ecommerce operations for growing brands." />
+  <meta name="author" content="Christine Ivy Irenea" />
+  <meta property="og:title" content="Christine Ivy Irenea — Executive Assistant | Founder Support | Business Operations" />
+  <meta property="og:description" content="Executive Assistant & Founder Support specialist with 7+ years building systems, CRM workflows, and ecommerce operations for growing brands." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/profile.png" />
+  <!-- NEW: Twitter Card tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Christine Ivy Irenea — Executive Assistant | Founder Support | Business Operations" />
+  <meta name="twitter:description" content="Executive Assistant & Founder Support specialist with 7+ years building systems, CRM workflows, and ecommerce operations for growing brands." />
+  <meta name="twitter:image" content="images/profile.png" />
+  <title>Christine Ivy Irenea — Executive Assistant | Founder Support | Business Operations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- NEW: structured data for search engines. Add "url" once the site has a permanent live domain. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Christine Ivy Irenea",
+    "jobTitle": "Executive Assistant | Founder Support | Business Operations",
+    "description": "Executive Assistant specializing in founder support, business operations, ecommerce operations, and CRM administration, with 7+ years of experience.",
+    "email": "mailto:christineivy.va@gmail.com",
+    "sameAs": ["https://linkedin.com/in/christine-ivy-irenea-executiveva"]
+  }
+  </script>
+
+  <style>
+    /* ── HOW I WORK ─────────────────────────────────── */
+    #how-i-work {
+      padding: var(--section-pad) 0;
+      background: var(--near-black);
+    }
+    #how-i-work .section-label { color: var(--gold); }
+    #how-i-work .section-title { color: var(--white); margin-bottom: 56px; }
+
+    .workflow-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: #333;
+    }
+
+    .workflow-step {
+      background: #222;
+      padding: 40px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: background var(--transition);
+    }
+    .workflow-step:hover { background: #1a1a1a; }
+    .workflow-step::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width var(--transition);
+    }
+    .workflow-step:hover::after { width: 100%; }
+
+    .workflow-num {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--gold-dark);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+    .workflow-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .workflow-desc {
+      font-size: 12.5px;
+      color: #999;
+      line-height: 1.7;
+    }
+
+    /* ── TESTIMONIALS ───────────────────────────────── */
+    #testimonials {
+      padding: var(--section-pad) 0;
+      background: var(--off-white);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      padding: 40px 36px;
+      border: 1px solid var(--light-gray);
+      position: relative;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+    .testimonial-card:hover {
+      border-color: var(--gold-light);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+      transform: translateY(-3px);
+    }
+    .testimonial-quote-mark {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      line-height: 0.6;
+      color: var(--gold);
+      opacity: 0.25;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .testimonial-text {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--light-gray);
+    }
+    .testimonial-photo {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 2px solid var(--light-gray);
+      background: var(--card-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .testimonial-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .testimonial-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--near-black);
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+    .testimonial-position {
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--gold-dark);
+      letter-spacing: 0.06em;
+      line-height: 1.4;
+    }
+    .testimonial-stars {
+      position: absolute;
+      top: 32px;
+      right: 32px;
+      display: flex;
+      gap: 2px;
+    }
+    .star {
+      color: var(--gold);
+      font-size: 11px;
+    }
+
+    /* ── POSITIONING STRIP ──────────────────────────── */
+    .positioning-strip {
+      background: var(--gold);
+      padding: 18px 40px;
+      text-align: center;
+    }
+    .positioning-strip p {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── NEW: SECTION INTRO TEXT (used under Testimonials heading) ── */
+    .section-intro {
+      font-size: 15px;
+      color: #666;
+      max-width: 560px;
+      line-height: 1.6;
+      margin-top: -24px;
+      margin-bottom: 40px;
+    }
+
+    /* ── NEW: OPERATING PRINCIPLES ──────────────────── */
+    #principles { padding: var(--section-pad) 0; background: var(--white); }
+    #principles .section-label { color: var(--gold-dark); }
+    #principles .section-title { margin-bottom: 56px; }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .principle-card {
+      background: var(--off-white);
+      padding: 36px 32px;
+      border: 1px solid var(--light-gray);
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+    .principle-card:hover {
+      border-color: var(--gold-light);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.06);
+      transform: translateY(-3px);
+    }
+    .principle-icon { font-size: 1.7rem; margin-bottom: 16px; display: block; }
+    .principle-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--near-black);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .principle-desc { font-size: 13px; color: #666; line-height: 1.7; }
+
+    @media (max-width: 960px) { .principles-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 600px) { .principles-grid { grid-template-columns: 1fr; } }
+
+    /* ── NEW: ACCESSIBILITY — SKIP LINK ─────────────── */
+    .skip-link {
+      position: absolute;
+      top: -48px;
+      left: 16px;
+      background: var(--near-black);
+      color: var(--white);
+      padding: 12px 20px;
+      z-index: 1000;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      transition: top var(--transition);
+    }
+    .skip-link:focus { top: 16px; }
+
+    /* ── NEW: RESPECT REDUCED-MOTION PREFERENCE ─────── */
+    @media (prefers-reduced-motion: reduce) {
+      .principle-card, .testimonial-card, .workflow-step {
+        transition: none;
+      }
+      .principle-card:hover, .testimonial-card:hover {
+        transform: none;
+      }
+    }
+
+    /* ── RESPONSIVE additions ───────────────────────── */
+    @media (max-width: 960px) {
+      .workflow-steps { grid-template-columns: repeat(3, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
+    }
+    @media (max-width: 600px) {
+      .workflow-steps { grid-template-columns: 1fr 1fr; }
+      /* On mobile: primary button full width, two CV buttons side by side below */
+      .hero-actions {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px !important;
+      }
+      .hero-actions .btn-primary {
+        grid-column: 1 / -1; /* spans both columns */
+        justify-content: center;
+      }
+      .hero-actions .btn-outline {
+        justify-content: center;
+      }
+    }
+    @media (max-width: 400px) {
+      .workflow-steps { grid-template-columns: 1fr; }
+      /* Very small screens: all buttons full width stacked */
+      .hero-actions {
+        grid-template-columns: 1fr !important;
+      }
+      .hero-actions .btn-primary,
+      .hero-actions .btn-outline {
+        grid-column: 1 / -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NEW: skip link for keyboard/screen-reader users -->
+  <a href="#hero" class="skip-link">Skip to content</a>
+
+  <!-- ── FLOATING WHATSAPP ── -->
+  <a href="https://api.whatsapp.com/send?phone=639079512928&text=Hi%20Christine%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect."
+     target="_blank"
+     rel="noopener noreferrer"
+     class="floating-wa"
+     aria-label="Chat on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- ── NAVIGATION ── -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Christine <span>Ivy</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact" class="nav-cta">Work With Me</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE MENU ── -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#tools" class="mobile-link">Tools</a>
+    <a href="#experience" class="mobile-link">Experience</a>
+    <a href="#certifications" class="mobile-link">Certifications</a>
+    <a href="#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       HERO — rewritten around business outcomes, not tasks
+  ══════════════════════════════════════════ -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-left">
+      <div class="hero-eyebrow fade-up">
+        <div class="hero-eyebrow-line"></div>
+        <span>Executive Assistant | Founder Support | Business Operations</span>
+      </div>
+      <h1 class="hero-name fade-up" style="transition-delay:0.1s">
+        Christine<br><em>Ivy Irenea</em>
+      </h1>
+      <p class="hero-role fade-up" style="transition-delay:0.18s">
+        Systems, Structure, and Follow-Through for Growing Founders
+      </p>
+      <div class="gold-rule" id="hero-rule"></div>
+      <p class="hero-desc fade-up" style="transition-delay:0.25s">
+        I partner with founders and ecommerce operators to build the systems, structure, and follow-through their business runs on — so growth doesn't outpace the operations behind it.
+      </p>
+      <div class="hero-actions fade-up" style="transition-delay:0.32s">
+        <!-- 1. Let's Work Together -->
+        <a href="#contact" class="btn-primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Let's Work Together
+        </a>
+        <!-- 2. View My CV — opens in new tab, no download -->
+        <a href="resume/christine-ivy-irenea.pdf" target="_blank" rel="noopener noreferrer" class="btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          View My CV
+        </a>
+        <!-- 3. Download CV — triggers file download -->
+        <a href="resume/christine-ivy-irenea.pdf" download class="btn-outline">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download CV
+        </a>
+      </div>
+      <!-- Hero stats verified against resume: 100+ listings/4 platforms, 20–40 weekly orders (shown at top of range), 200+ applicant records -->
+      <div class="hero-stats fade-up" style="transition-delay:0.4s">
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-target="100" data-suffix="+">0</div>
+          <div class="hero-stat-label">Active Listings Managed Across 4 Platforms</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-target="40" data-suffix="/wk">0</div>
+          <div class="hero-stat-label">Customer Orders Processed Weekly (20–40)</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num" data-target="200" data-suffix="+">0</div>
+          <div class="hero-stat-label">Applicant Records Organized &amp; Managed</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-image-wrap fade-up" style="transition-delay:0.2s">
+        <img src="images/profile.png" alt="Christine Ivy Irenea, Executive Assistant" />
+        <div class="hero-availability" aria-live="polite">
+          <span class="avail-dot" aria-hidden="true"></span>
+          <span class="avail-text">Available for new clients</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── POSITIONING STRIP ── -->
+  <div class="positioning-strip">
+    <p>"Helping founders build the operational systems and structure that let them scale without losing control of the details."</p>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       ABOUT — tightened ~25%, systems/ownership-focused;
+       logistics (office/internet/timezone) moved to Quick Facts below
+  ══════════════════════════════════════════ -->
+  <section id="about" aria-label="About Christine">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-image-wrap fade-up">
+          <div class="about-image-frame">
+            <img src="images/about.png" alt="Christine Ivy Irenea at work" loading="lazy" decoding="async" />
+          </div>
+          <!-- UPDATED: 4+ years corrected to 7+ years per current resume -->
+          <div class="about-image-badge">
+            <div class="about-badge-num" data-target="7" data-suffix="+">7+</div>
+            <div class="about-badge-label">Years in Ecommerce &amp; Business Ops</div>
+          </div>
+        </div>
+
+        <div class="about-text fade-up" style="transition-delay:0.15s">
+          <span class="section-label">About Christine</span>
+          <h2 class="section-title">The operational backbone your business has been missing</h2>
+          <p>I'm an Executive Assistant with 7+ years of experience across ecommerce operations, CRM administration, executive support, and recruitment coordination — the kind of range that comes from actually running the details, not just checking boxes.</p>
+          <p>From maintaining 100+ product listings across four ecommerce platforms, to building a custom CRM for a high-ticket coaching business, to coordinating 20+ weekly interviews across a full hiring pipeline — the standard stays the same: documented, repeatable systems that hold up under real volume.</p>
+          <p>I believe good operations should be invisible. The best systems quietly remove friction, so the people running the business can spend their time on strategy instead of fixing the same problem twice.</p>
+          <!-- UPDATED: pillars reframed around systems thinking, ownership, documentation, and business impact -->
+          <div class="about-pillars">
+            <div class="about-pillar">
+              <div class="about-pillar-title">Systems-Minded</div>
+              <p>I build organized, documented workflows and processes your team can run without me in the room.</p>
+            </div>
+            <div class="about-pillar">
+              <div class="about-pillar-title">Ownership-Driven</div>
+              <p>I treat problems as mine to solve — flagging issues early instead of waiting to be asked.</p>
+            </div>
+            <div class="about-pillar">
+              <div class="about-pillar-title">Documentation-First</div>
+              <p>Every process I touch gets written down, so institutional knowledge doesn't live in one inbox.</p>
+            </div>
+            <div class="about-pillar">
+              <div class="about-pillar-title">Built to Scale</div>
+              <p>The systems I set up are designed to hold up as order volume, headcount, or complexity grows.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       NEW SECTION: QUICK FACTS
+       Logistics details moved out of About, into their own scannable block.
+       Reuses .about-pillars / .about-pillar for visual consistency with the About section above.
+  ══════════════════════════════════════════ -->
+  <section id="quick-facts" aria-label="Quick Facts">
+    <div class="container">
+      <span class="section-label fade-up">At a Glance</span>
+      <h2 class="section-title fade-up">Ready to plug in from day one</h2>
+      <div class="about-pillars fade-up" style="transition-delay:0.1s">
+        <div class="about-pillar">
+          <div class="about-pillar-title">Home Office</div>
+          <p>Dedicated, quiet home office set up for focused work and client calls.</p>
+        </div>
+        <div class="about-pillar">
+          <div class="about-pillar-title">Connectivity</div>
+          <p>PLDT Fiber, 100 Mbps, with Globe/Smart mobile data as backup.</p>
+        </div>
+        <div class="about-pillar">
+          <div class="about-pillar-title">Timezone Coverage</div>
+          <p>Full-time availability aligned with US EST and PST business hours.</p>
+        </div>
+        <div class="about-pillar">
+          <div class="about-pillar-title">Equipment</div>
+          <p>HD webcam and noise-canceling headset — ready for calls and screen shares from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       HOW I WORK — unchanged, already reflects operator-level process thinking
+  ══════════════════════════════════════════ -->
+  <section id="how-i-work" aria-label="How Christine Works">
+    <div class="container">
+      <span class="section-label fade-up">My Process</span>
+      <h2 class="section-title fade-up">How I work</h2>
+      <div class="workflow-steps">
+
+        <div class="workflow-step fade-up">
+          <div class="workflow-num">01</div>
+          <div class="workflow-title">Discovery</div>
+          <p class="workflow-desc">We start with a focused call to understand your business, your pain points, and what "good" looks like for you. No templates — just listening.</p>
+        </div>
+
+        <div class="workflow-step fade-up" style="transition-delay:0.08s">
+          <div class="workflow-num">02</div>
+          <div class="workflow-title">Audit</div>
+          <p class="workflow-desc">I review your current tools, workflows, and systems to identify gaps, bottlenecks, and quick wins — before touching anything.</p>
+        </div>
+
+        <div class="workflow-step fade-up" style="transition-delay:0.16s">
+          <div class="workflow-num">03</div>
+          <div class="workflow-title">Setup</div>
+          <p class="workflow-desc">I build or rebuild the systems we've agreed on — CRM, SOPs, dashboards, or operational workflows — with clear documentation from the start.</p>
+        </div>
+
+        <div class="workflow-step fade-up" style="transition-delay:0.24s">
+          <div class="workflow-num">04</div>
+          <div class="workflow-title">Optimize</div>
+          <p class="workflow-desc">Once systems are live, I monitor, refine, and improve — fixing friction points and making sure everything runs efficiently under real conditions.</p>
+        </div>
+
+        <div class="workflow-step fade-up" style="transition-delay:0.32s">
+          <div class="workflow-num">05</div>
+          <div class="workflow-title">Maintain</div>
+          <p class="workflow-desc">I stay on as your ongoing operational partner — keeping systems updated, handling daily execution, and growing with your business long-term.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       NEW SECTION: OPERATING PRINCIPLES
+       No numbering — these aren't a sequence, so markers would imply an order that isn't there.
+  ══════════════════════════════════════════ -->
+  <section id="principles" aria-label="Operating Principles">
+    <div class="container">
+      <span class="section-label fade-up">How I Think</span>
+      <h2 class="section-title fade-up">Operating principles</h2>
+      <div class="principles-grid">
+
+        <div class="principle-card fade-up">
+          <span class="principle-icon" aria-hidden="true">🗂</span>
+          <div class="principle-title">I document as I go</div>
+          <p class="principle-desc">If it's not written down, it doesn't scale. SOPs get built alongside the work itself, not after the fact.</p>
+        </div>
+
+        <div class="principle-card fade-up" style="transition-delay:0.08s">
+          <span class="principle-icon" aria-hidden="true">🎯</span>
+          <div class="principle-title">I own the problem, not just the task</div>
+          <p class="principle-desc">I flag risk before it becomes urgent, and follow through until it's actually resolved.</p>
+        </div>
+
+        <div class="principle-card fade-up" style="transition-delay:0.16s">
+          <span class="principle-icon" aria-hidden="true">🔄</span>
+          <div class="principle-title">I improve what I touch</div>
+          <p class="principle-desc">Every recurring process is a candidate for a better version — I look for the friction and remove it.</p>
+        </div>
+
+        <div class="principle-card fade-up" style="transition-delay:0.04s">
+          <span class="principle-icon" aria-hidden="true">🛡</span>
+          <div class="principle-title">I protect focus time</div>
+          <p class="principle-desc">Calendars, inboxes, and priorities get guarded like they're my own — so decisions get made with a clear head.</p>
+        </div>
+
+        <div class="principle-card fade-up" style="transition-delay:0.12s">
+          <span class="principle-icon" aria-hidden="true">📣</span>
+          <div class="principle-title">I communicate before I'm asked</div>
+          <p class="principle-desc">Status updates happen proactively. Nobody should have to chase me for where something stands.</p>
+        </div>
+
+        <div class="principle-card fade-up" style="transition-delay:0.2s">
+          <span class="principle-icon" aria-hidden="true">🧩</span>
+          <div class="principle-title">I build for handoff</div>
+          <p class="principle-desc">Systems should outlast the person who built them — documented clearly enough that anyone can pick them up.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SERVICES — rewritten to lead with the business problem solved, not the task list
+  ══════════════════════════════════════════ -->
+  <section id="services" aria-label="Core Services">
+    <div class="container">
+      <span class="section-label fade-up">What I Do</span>
+      <h2 class="section-title fade-up">Core service areas</h2>
+      <div class="services-grid">
+
+        <div class="service-card fade-up">
+          <span class="service-num" aria-hidden="true">01</span>
+          <div class="service-icon" aria-hidden="true">🛍</div>
+          <h3 class="service-title">Ecommerce Operations Management</h3>
+          <p class="service-desc">For founders selling across multiple channels, keeping listings, pricing, and fulfillment aligned is a full-time job on its own. I take that layer off your plate — maintaining 100+ active listings across four platforms and processing 20–40 weekly orders, so pricing stays accurate and nothing falls through the cracks as you scale.</p>
+          <div class="service-tags" role="list" aria-label="Related tools">
+            <span class="tag" role="listitem">Shopify</span>
+            <span class="tag" role="listitem">Shopee</span>
+            <span class="tag" role="listitem">Lazada</span>
+            <span class="tag" role="listitem">TikTok Shop</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" style="transition-delay:0.08s">
+          <span class="service-num" aria-hidden="true">02</span>
+          <div class="service-icon" aria-hidden="true">📊</div>
+          <h3 class="service-title">CRM Administration &amp; Reporting</h3>
+          <p class="service-desc">A growing pipeline gets chaotic fast without a system to track it. I build and maintain CRMs — including a custom Google Sheets CRM I designed from the ground up for a high-ticket coaching business — with lead tracking, pipeline stages, and reporting dashboards that show exactly where every prospect and client stands.</p>
+          <div class="service-tags" role="list" aria-label="Related tools">
+            <span class="tag" role="listitem">Google Sheets CRM</span>
+            <span class="tag" role="listitem">Zendesk</span>
+            <span class="tag" role="listitem">Pipeline Tracking</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" style="transition-delay:0.16s">
+          <span class="service-num" aria-hidden="true">03</span>
+          <div class="service-icon" aria-hidden="true">🤝</div>
+          <h3 class="service-title">Executive &amp; Administrative Support</h3>
+          <!-- UPDATED: removed "travel coordination" — not supported by the resume. Replaced with document/process organization, which is. -->
+          <p class="service-desc">Founders lose hours a week to calendar tetris, inbox triage, and scattered documentation. I take ownership of that layer — calendar and inbox management, document organization, and repeatable processes — so decision fatigue drops and your time goes toward the work only you can do.</p>
+          <div class="service-tags" role="list" aria-label="Related tools">
+            <span class="tag" role="listitem">Calendar Mgmt</span>
+            <span class="tag" role="listitem">Inbox Management</span>
+            <span class="tag" role="listitem">Google Workspace</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" style="transition-delay:0.24s">
+          <span class="service-num" aria-hidden="true">04</span>
+          <div class="service-icon" aria-hidden="true">📋</div>
+          <h3 class="service-title">Recruitment Coordination &amp; ATS Management</h3>
+          <p class="service-desc">Hiring stalls when scheduling and candidate records aren't tightly managed. I've coordinated 20+ weekly candidate interviews across recruiter and hiring manager calendars, kept ATS records accurate for 200+ applicants, and prepared recruitment reporting — with the confidentiality and precision hiring teams need to move fast without dropping details.</p>
+          <div class="service-tags" role="list" aria-label="Related tools">
+            <span class="tag" role="listitem">ATS Management</span>
+            <span class="tag" role="listitem">Interview Scheduling</span>
+            <span class="tag" role="listitem">Pipeline Tracking</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" style="transition-delay:0.32s">
+          <span class="service-num" aria-hidden="true">05</span>
+          <div class="service-icon" aria-hidden="true">📱</div>
+          <h3 class="service-title">Social Media &amp; Content Support</h3>
+          <p class="service-desc">A growing community needs consistent content and someone watching the market — without pulling a founder's attention away from the business itself. I've built content calendars, tracked competitors, and organized digital assets for a health and wellness brand's 9.9K-follower Facebook community, keeping output consistent while the founder stayed focused elsewhere.</p>
+          <div class="service-tags" role="list" aria-label="Related tools">
+            <span class="tag" role="listitem">Meta Business Suite</span>
+            <span class="tag" role="listitem">Canva</span>
+            <span class="tag" role="listitem">Content Calendars</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" style="transition-delay:0.4s">
+          <span class="service-num" aria-hidden="true">06</span>
+          <div class="service-icon" aria-hidden="true">💬</div>
+          <h3 class="service-title">Customer Service &amp; Support Operations</h3>
+          <p class="service-desc">Every unresolved customer issue is a small risk to the brand. I bring high-volume, quality-compliant support experience — phone, email, and chat — with accurate case documentation and a track record of resolving escalations before they become bigger problems, built through supporting a major airline's customer base.</p>
+          <div class="service-tags" role="list" aria-label="Related tools">
+            <span class="tag" role="listitem">Zendesk</span>
+            <span class="tag" role="listitem">Email Support</span>
+            <span class="tag" role="listitem">Chat Support</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PROJECTS — copy tightened toward Context → Actions → Result;
+       full Context/Challenge/Role/Actions/Tools/Results/Impact framework recommended for the linked case-study pages (see chat report)
+  ══════════════════════════════════════════ -->
+  <section id="projects" aria-label="Featured Projects">
+    <div class="container">
+      <span class="section-label fade-up">Case Studies</span>
+      <h2 class="section-title fade-up">Featured Projects</h2>
+
+      <div class="projects-grid">
+
+        <!-- CRM PROJECT -->
+        <article class="project-card project-card--featured fade-up">
+          <div class="project-img">
+            <img src="images/project-crm.png" alt="Custom Google Sheets CRM project preview" loading="lazy" decoding="async" />
+            <a href="./case-study/crm.html" class="project-overlay">
+              <span class="project-overlay-label">View Case Study</span>
+            </a>
+          </div>
+          <div class="project-body">
+            <div class="project-category">CRM Development · Google Sheets · Portfolio Project</div>
+            <h3 class="project-title">Custom Sales CRM for a High-Ticket Business Coach</h3>
+            <p class="project-desc">A business coach running a high-ticket coaching program had prospect and client data scattered across spreadsheets and memory, with no reliable way to see where deals stood. I designed and built a fully custom Google Sheets CRM from the ground up — lead tracking, pipeline stages, follow-up workflows, and reporting dashboards that centralized every record in one place.</p>
+            <span class="project-result">Replaced scattered manual tracking with one centralized, structured system</span>
+          </div>
+        </article>
+
+        <!-- ECOMMERCE PROJECT -->
+        <article class="project-card fade-up" style="transition-delay:0.1s">
+          <div class="project-img">
+            <img src="images/project-ecom.png" alt="Ecommerce operations project preview" loading="lazy" decoding="async" />
+            <a href="./case-study/ecom.html" class="project-overlay">
+              <span class="project-overlay-label">View Case Study</span>
+            </a>
+          </div>
+          <div class="project-body">
+            <div class="project-category">Ecommerce Operations · Multi-Platform</div>
+            <h3 class="project-title">Multi-Platform Ecommerce Operations — IPTS Health &amp; Wellness</h3>
+            <p class="project-desc">IPTS Health and Wellness needed one person who could own ecommerce operations end-to-end without dropping consistency across channels. I managed 100+ active listings across Shopify, Shopee, Lazada, and TikTok Shop — handling pricing, inventory, 20–40 weekly customer orders, fulfillment records, and backend systems for a brand with an active online community.</p>
+            <span class="project-result">100+ listings maintained across 4 platforms simultaneously</span>
+          </div>
+        </article>
+
+        <!-- SOCIAL MEDIA PROJECT -->
+        <article class="project-card fade-up" style="transition-delay:0.2s">
+          <div class="project-img">
+            <img src="images/project-social.png" alt="Facebook community content project preview" loading="lazy" decoding="async" />
+            <a href="./case-study/social.html" class="project-overlay">
+              <span class="project-overlay-label">View Case Study</span>
+            </a>
+          </div>
+          <div class="project-body">
+            <div class="project-category">Social Media Support · Content Planning</div>
+            <h3 class="project-title">Community &amp; Content Growth — 9.9K Facebook Community</h3>
+            <p class="project-desc">A growing wellness brand needed consistent content and market awareness without pulling the founder away from running the business. I built content calendars, tracked competitors and market trends, and organized digital assets — keeping content output consistent for a 9.9K-follower Facebook community.</p>
+            <span class="project-result">Supported consistent content delivery for a 9.9K-follower brand community</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS — quotes and authors kept exactly as provided; only the section intro is new
+══════════════════════════════════════════ -->
+<section id="testimonials" aria-label="Client Testimonials">
+  <div class="container">
+    <span class="section-label fade-up">What Clients Say</span>
+    <h2 class="section-title fade-up">Trusted by the people I work with</h2>
+    <p class="section-intro fade-up" style="transition-delay:0.05s">Working relationships built on follow-through, not just good intentions — in one case, for seven years running.</p>
+
+    <div class="testimonials-grid">
+
+      <!-- TESTIMONIAL 1 -->
+      <article class="testimonial-card fade-up">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+
+        <span class="testimonial-quote-mark" aria-hidden="true">"</span>
+
+        <p class="testimonial-text">
+          Working with Christine for the past seven years has been one of the strongest pillars of our business growth. Her consistency, organization, and dedication in managing our ecommerce operations have helped us scale with better systems and smoother workflows.
+        </p>
+
+        <div class="testimonial-author">
+          <div class="testimonial-photo">
+            <img src="./images/testimonial-sarah.jpg" alt="Headshot of Sarah Jane Rivero, CEO of IPTS Health and Wellness Products Trading" class="testimonial-avatar" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="testimonial-info">
+            <div class="testimonial-name">Sarah Jane Rivero</div>
+            <div class="testimonial-position">
+              CEO — IPTS Health and Wellness Products Trading
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TESTIMONIAL 2 -->
+      <article class="testimonial-card fade-up" style="transition-delay:0.1s">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+
+        <span class="testimonial-quote-mark" aria-hidden="true">"</span>
+
+        <p class="testimonial-text">
+          Christine was an exceptional coordinator on our recruitment team. She kept our interview schedules tight, our ATS records spotless, and our candidate pipelines organized — even during our highest-volume hiring periods. Her attention to confidentiality and detail made her someone every hiring manager trusted completely.
+        </p>
+
+        <div class="testimonial-author">
+          <div class="testimonial-photo">
+            <img src="./images/testimonial-patrice.jpg" alt="Headshot of Patrice Verdillo Roslin, Talent Acquisition Manager" class="testimonial-avatar" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="testimonial-info">
+            <div class="testimonial-name">Patrice Verdillo Roslin</div>
+            <div class="testimonial-position">
+              Talent Acquisition Manager — Recruitment Solutions Department
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TESTIMONIAL 3 -->
+      <article class="testimonial-card fade-up" style="transition-delay:0.2s">
+        <div class="testimonial-stars" aria-label="5 out of 5 stars">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+
+        <span class="testimonial-quote-mark" aria-hidden="true">"</span>
+
+        <p class="testimonial-text">
+          In a high-pressure support environment like ours, Christine stood out for her composure, professionalism, and precision. Her case documentation was always thorough and accurate, and she handled escalated customer concerns with calm and clarity. She's the kind of support specialist you want on your team when it matters most.
+        </p>
+
+        <div class="testimonial-author">
+          <div class="testimonial-photo">
+            <img src="./images/testimonial-maria.jpg" alt="Headshot of Maria Recuel Kheng Inocencio, Subject Matter Expert at Concentrix" class="testimonial-avatar" loading="lazy" decoding="async" />
+          </div>
+
+          <div class="testimonial-info">
+            <div class="testimonial-name">Maria Recuel Kheng Inocencio</div>
+            <div class="testimonial-position">
+              Subject Matter Expert — Concentrix, United Airlines Account
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+  <!-- ══════════════════════════════════════════
+       TOOLS — recategorized; Amazon Seller Central added (confirmed in resume's Tech Proficiency list, previously missing here)
+  ══════════════════════════════════════════ -->
+  <section id="tools" aria-label="Tools and Tech Stack">
+    <div class="container">
+      <span class="section-label fade-up">My Tech Stack</span>
+      <h2 class="section-title fade-up">Tools I use</h2>
+      <div class="tools-categories fade-up" style="transition-delay:0.1s">
+
+        <div class="tools-category">
+          <div class="tools-category-label">Executive Support &amp; Productivity</div>
+          <div class="tools-row" role="list">
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Google Docs</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Google Sheets</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Google Calendar</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Google Drive</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Microsoft Excel</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Microsoft Word</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Outlook</span>
+          </div>
+        </div>
+
+        <!-- UPDATED: Amazon Seller Central added — listed in resume Tech Proficiency but missing from the site -->
+        <div class="tools-category">
+          <div class="tools-category-label">Ecommerce Platforms</div>
+          <div class="tools-row" role="list">
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Shopify</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Amazon Seller Central</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Shopee Seller Center</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Lazada Seller Center</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>TikTok Shop</span>
+          </div>
+        </div>
+
+        <div class="tools-category">
+          <div class="tools-category-label">Project &amp; Task Management</div>
+          <div class="tools-row" role="list">
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Trello</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Asana</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Notion</span>
+          </div>
+        </div>
+
+        <div class="tools-category">
+          <div class="tools-category-label">CRM &amp; Customer Support</div>
+          <div class="tools-row" role="list">
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Zendesk</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Google Sheets CRM (Custom)</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Email Support</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Chat Support</span>
+          </div>
+        </div>
+
+        <div class="tools-category">
+          <div class="tools-category-label">Communication &amp; Collaboration</div>
+          <div class="tools-row" role="list">
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Slack</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Zoom</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Google Meet</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>WhatsApp Business</span>
+          </div>
+        </div>
+
+        <div class="tools-category">
+          <div class="tools-category-label">Marketing, Content &amp; AI</div>
+          <div class="tools-row" role="list">
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Meta Business Suite</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Canva</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>ChatGPT</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Claude</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Gemini</span>
+            <span class="tool-chip" role="listitem"><span class="tool-chip-dot" aria-hidden="true"></span>Grammarly</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       EXPERIENCE TIMELINE — role 1 title aligned to resume (dropped "Freelance"/"Virtual" per rebrand); dates and bullets otherwise resume-verified
+  ══════════════════════════════════════════ -->
+  <section id="experience" aria-label="Work Experience">
+    <div class="container">
+      <span class="section-label fade-up">Work History</span>
+      <h2 class="section-title fade-up">Experience timeline</h2>
+
+      <div class="timeline fade-up" style="transition-delay:0.1s">
+
+        <div class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-period">July 2019 — March 2026</div>
+            <h3 class="timeline-role">Executive Assistant &amp; Ecommerce Operations</h3>
+            <div class="timeline-company">IPTS Health and Wellness Products Trading · Remote</div>
+            <ul class="timeline-bullets">
+              <li>Coordinated end-to-end ecommerce operations, inventory monitoring, and fulfillment workflows for 100+ active product listings across Shopify, Shopee, Lazada, and TikTok Shop.</li>
+              <li>Managed 20–40 weekly customer orders, maintained accurate fulfillment records, tracked order status, and resolved customer concerns to ensure a smooth purchasing experience.</li>
+              <li>Supported brand growth by creating content calendars, conducting competitor and market research, and organizing digital assets for a health and wellness brand with a 9.9K-follower Facebook community.</li>
+              <li>Utilized Meta Business Suite, Canva, Google Sheets, ChatGPT, and Claude to streamline workflows, support content planning, and improve operational efficiency across the business.</li>
+              <li>Maintained backend systems, customer communication, inventory updates, and operational reports to support daily ecommerce and social media activities.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-period">September 2022 — October 2025</div>
+            <h3 class="timeline-role">Customer Service Representative — United Airlines Account</h3>
+            <div class="timeline-company">Concentrix · Remote</div>
+            <ul class="timeline-bullets">
+              <li>Resolved customer inquiries related to flight bookings, schedule changes, travel policies, and baggage concerns while delivering professional phone-based support.</li>
+              <li>Maintained accurate customer records and case documentation while meeting quality assurance and compliance standards in a high-volume environment.</li>
+              <li>Coordinated with internal airline support teams to resolve escalated travel concerns and service disruptions efficiently and with professionalism.</li>
+              <li>Consistently adhered to performance metrics and service-level agreements while delivering dependable, high-quality customer experiences.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-period">May 2021 — August 2022</div>
+            <h3 class="timeline-role">Talent Acquisition Specialist</h3>
+            <div class="timeline-company">Recruitment Solutions Department</div>
+            <ul class="timeline-bullets">
+              <li>Scheduled and coordinated 20+ weekly candidate interviews while managing recruiter and hiring manager calendars across multiple roles and departments.</li>
+              <li>Maintained ATS records for 200+ applicants, ensuring accurate documentation, timely updates, and full confidentiality throughout the recruitment process.</li>
+              <li>Tracked candidate pipelines and follow-up activities to improve recruitment workflow visibility and keep hiring timelines on track.</li>
+              <li>Prepared recruitment reports and candidate documentation to support hiring team decision-making and compliance requirements.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CERTIFICATIONS — unchanged, already matches resume exactly
+  ══════════════════════════════════════════ -->
+  <section id="certifications" aria-label="Certifications and Training">
+    <div class="container">
+      <span class="section-label fade-up">Credentials</span>
+      <h2 class="section-title fade-up">Certifications &amp; Education</h2>
+      <div class="certs-grid">
+
+        <div class="cert-card fade-up">
+          <div class="cert-badge" aria-hidden="true">🛍</div>
+          <div class="cert-name">Shopify Product Fundamentals</div>
+          <div class="cert-issuer">VAME Philippines</div>
+          <div class="cert-year">2026</div>
+        </div>
+
+        <div class="cert-card fade-up" style="transition-delay:0.08s">
+          <div class="cert-badge" aria-hidden="true">✅</div>
+          <div class="cert-name">Zendesk Customer Service Certification</div>
+          <div class="cert-issuer">Zendesk</div>
+          <div class="cert-year">2026</div>
+        </div>
+
+        <div class="cert-card fade-up" style="transition-delay:0.16s">
+          <div class="cert-badge" aria-hidden="true">📊</div>
+          <div class="cert-name">Google Sheets Certification</div>
+          <div class="cert-issuer">Google Skillshop</div>
+          <div class="cert-year">2026</div>
+        </div>
+
+        <div class="cert-card fade-up" style="transition-delay:0.24s">
+          <div class="cert-badge" aria-hidden="true">🎓</div>
+          <div class="cert-name">Bachelor of Arts in English Language Studies</div>
+          <div class="cert-issuer">San Mateo Municipal College</div>
+          <div class="cert-year">Undergraduate</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CONTACT — intro copy updated; fields now wrapped in a real <form> for accessibility (was a bare div before)
+  ══════════════════════════════════════════ -->
+  <section id="contact" aria-label="Contact Christine">
+    <div class="container">
+      <span class="section-label fade-up">Let's Connect</span>
+      <h2 class="section-title fade-up">Ready to streamline your operations<br>and scale with less chaos?</h2>
+      <div class="contact-grid">
+
+        <div class="contact-info fade-up">
+          <p>I'm available full-time for remote engagements aligned with US EST and PST timezones — ready to step in as your operational right hand, whether that's ecommerce operations, a CRM build, executive support, recruitment coordination, or day-to-day business operations.</p>
+          <div class="contact-links">
+
+            <a href="mailto:christineivy.va@gmail.com" class="contact-link">
+              <div class="contact-link-icon" aria-hidden="true">✉</div>
+              <div class="contact-link-text">
+                <div class="contact-link-label">Email</div>
+                christineivy.va@gmail.com
+              </div>
+            </a>
+
+            <a href="https://api.whatsapp.com/send?phone=639079512928&text=Hi%20Christine%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="contact-link">
+              <div class="contact-link-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </div>
+              <div class="contact-link-text">
+                <div class="contact-link-label">WhatsApp</div>
+                +63 907 951 2928
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/christine-ivy-irenea-executiveva" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#0077B5" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div class="contact-link-text">
+                <div class="contact-link-label">LinkedIn</div>
+                linkedin.com/in/christine-ivy-irenea-executiveva
+              </div>
+            </a>
+
+          </div>
+          <a href="resume/christine-ivy-irenea.pdf" download class="btn-gold">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download My CV
+          </a>
+        </div>
+
+        <!-- UPDATED: fields now wrapped in a semantic <form> element (previously a bare div) for screen-reader landmark support. Submit button behavior (type="button" + JS handler) is unchanged so this doesn't touch script.js logic. -->
+        <div class="contact-form-wrap fade-up" style="transition-delay:0.15s">
+          <form id="contact-form" aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" placeholder="Jane" autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Smith" autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="service">Service Needed</label>
+              <select id="service" name="service">
+                <option value="" disabled selected>Select a service area</option>
+                <option value="ecommerce-ops">Ecommerce Operations Management</option>
+                <option value="crm">CRM Administration &amp; Reporting</option>
+                <option value="executive-va">Executive &amp; Administrative Support</option>
+                <option value="recruitment">Recruitment Coordination &amp; ATS</option>
+                <option value="social-media">Social Media &amp; Content Support</option>
+                <option value="customer-service">Customer Service &amp; Support Ops</option>
+                <option value="multiple">Multiple / Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Tell Me About Your Business</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your business, your current challenges, and what kind of support you're looking for..."></textarea>
+            </div>
+            <button type="button" id="form-submit" class="btn-form-submit">Send Message →</button>
+            <div id="form-feedback" class="form-feedback" role="alert" aria-live="polite"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-copy">
+        &copy; <span id="footer-year"></span> <span>Christine Ivy Irenea</span>. All rights reserved.
+        <span style="display:block; margin-top:4px; font-size:11px; color:#444; letter-spacing:0.06em;">
+          Based in the Philippines &nbsp;•&nbsp; Available Worldwide
+        </span>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
