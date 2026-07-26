@@ -393,7 +393,7 @@ nav#main-nav.scrolled {
 #hero {
   min-height: 100svh;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 58% 42%;
   align-items: center;
   padding-top: var(--nav-h);
   background: var(--white);
@@ -406,18 +406,18 @@ nav#main-nav.scrolled {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 42%;
   height: 100%;
   background: var(--off-white);
   z-index: 0;
 }
 
-.hero-left {
-  position: relative;
-  z-index: 1;
-  padding: 80px 60px 80px 40px;
-  max-width: 620px;
-  margin-left: auto;
+.hero-left{
+    position:relative;
+    z-index:1;
+    padding:80px 60px 80px 40px;
+    max-width:760px;
+    margin-left:auto;
 }
 
 .hero-eyebrow {
@@ -467,13 +467,13 @@ nav#main-nav.scrolled {
   line-height: 1.4;
 }
 
-.hero-desc {
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--dark);
-  line-height: 1.85;
-  margin-bottom: 48px;
-  max-width: 440px;
+.hero-desc{
+    font-size:20px;
+    font-weight:300;
+    color:var(--dark);
+    line-height:1.8;
+    margin-bottom:48px;
+    max-width:620px;
 }
 
 .hero-actions {
@@ -506,19 +506,21 @@ nav#main-nav.scrolled {
   margin-top: 4px;
 }
 
-.hero-right {
-  position: relative;
-  z-index: 1;
-  padding: 80px 40px 80px 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.hero-right{
+    position:relative;
+    z-index:1;
+    padding:80px 40px 80px 60px;
+
+    display:flex;
+    justify-content:center;
+
+    align-items:flex-start;
 }
 
-.hero-image-wrap {
-  position: relative;
-  width: 360px;
-  height: 460px;
+.hero-image-wrap{
+    position:relative;
+    width:430px;
+    height:560px;
 }
 
 .hero-image-wrap::before {
@@ -905,6 +907,96 @@ nav#main-nav.scrolled {
 .project-result::before {
   content: '↑';
   font-size: 14px;
+}
+
+/* ==========================================
+   OPERATING PRINCIPLES
+========================================== */
+
+#principles{
+    padding:120px 0;
+    background:#faf8f4;
+}
+
+.principles-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(280px,1fr));
+
+    gap:28px;
+
+    margin-top:70px;
+
+}
+
+.principle-card{
+
+    background:#fff;
+
+    border:1px solid #ececec;
+
+    border-radius:18px;
+
+    padding:36px;
+
+    transition:.35s ease;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.04);
+
+}
+
+.principle-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.08);
+
+}
+
+.principle-icon{
+
+    width:64px;
+
+    height:64px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:#F6F1E7;
+
+    font-size:30px;
+
+    margin-bottom:22px;
+
+}
+
+.principle-card h3{
+
+    font-size:1.2rem;
+
+    margin-bottom:14px;
+
+    color:#222;
+
+}
+
+.principle-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:.95rem;
+
 }
 
 /* ── TOOLS ───────────────────────────────────────────── */
