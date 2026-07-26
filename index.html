@@ -244,74 +244,6 @@
       margin-bottom: 40px;
     }
 
-    /* ── NEW: OPERATING PRINCIPLES ──────────────────── */
-    #principles { padding: var(--section-pad) 0; background: var(--white); }
-    #principles .section-label { color: var(--gold-dark); }
-    #principles .section-title { margin-bottom: 56px; }
-
-    .principles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .principle-card {
-      background: var(--off-white);
-      padding: 36px 32px;
-      border: 1px solid var(--light-gray);
-      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
-    }
-    .principle-card:hover {
-      border-color: var(--gold-light);
-      box-shadow: 0 16px 48px rgba(0,0,0,0.06);
-      transform: translateY(-3px);
-    }
-    .principle-icon { font-size: 1.7rem; margin-bottom: 16px; display: block; }
-    .principle-title {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--near-black);
-      margin-bottom: 10px;
-      line-height: 1.3;
-    }
-    .principle-desc { font-size: 13px; color: #666; line-height: 1.7; }
-
-    @media (max-width: 960px) { .principles-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) {
-    .principles-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .principle-card {
-        padding: 28px 24px;
-    }
-}
-
-    /* ── NEW: ACCESSIBILITY — SKIP LINK ─────────────── */
-    .skip-link {
-      position: absolute;
-      top: -48px;
-      left: 16px;
-      background: var(--near-black);
-      color: var(--white);
-      padding: 12px 20px;
-      z-index: 1000;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 0.04em;
-      transition: top var(--transition);
-    }
-    .skip-link:focus { top: 16px; }
-
-    /* ── NEW: RESPECT REDUCED-MOTION PREFERENCE ─────── */
-    @media (prefers-reduced-motion: reduce) {
-      .principle-card, .testimonial-card, .workflow-step {
-        transition: none;
-      }
-      .principle-card:hover, .testimonial-card:hover {
-        transform: none;
-      }
-    }
 
     /* ── RESPONSIVE additions ───────────────────────── */
 
@@ -601,49 +533,57 @@ Orders Managed Weekly</div>
        No numbering — these aren't a sequence, so markers would imply an order that isn't there.
   ══════════════════════════════════════════ -->
   <section id="principles" aria-label="Operating Principles">
-    <div class="container">
-      <span class="section-label fade-up">How I Think</span>
-      <h2 class="section-title fade-up">Operating principles</h2>
-      <div class="principles-grid">
+    <div class="principles-grid">
 
-        <div class="principle-card fade-up">
-          <span class="principle-icon" aria-hidden="true">🗂</span>
-          <div class="principle-title">I document as I go</div>
-          <p class="principle-desc">If it's not written down, it doesn't scale. SOPs get built alongside the work itself, not after the fact.</p>
-        </div>
-
-        <div class="principle-card fade-up" style="transition-delay:0.08s">
-          <span class="principle-icon" aria-hidden="true">🎯</span>
-          <div class="principle-title">I own the problem, not just the task</div>
-          <p class="principle-desc">I flag risk before it becomes urgent, and follow through until it's actually resolved.</p>
-        </div>
-
-        <div class="principle-card fade-up" style="transition-delay:0.16s">
-          <span class="principle-icon" aria-hidden="true">🔄</span>
-          <div class="principle-title">I improve what I touch</div>
-          <p class="principle-desc">Every recurring process is a candidate for a better version — I look for the friction and remove it.</p>
-        </div>
-
-        <div class="principle-card fade-up" style="transition-delay:0.04s">
-  <span class="principle-icon" aria-hidden="true">📊</span>
-  <div class="principle-title">I make decisions using data</div>
-  <p class="principle-desc">I rely on marketplace metrics, inventory reports, advertising performance, and operational KPIs to identify opportunities, solve problems, and support smarter business decisions.</p>
-</div>
-
-        <div class="principle-card fade-up" style="transition-delay:0.12s">
-  <span class="principle-icon" aria-hidden="true">📈</span>
-  <div class="principle-title">I monitor performance continuously</div>
-  <p class="principle-desc">Marketplace performance isn't something I check occasionally. I continuously monitor listings, inventory, advertising metrics, and operational reports to identify issues early and keep performance on track.</p>
-</div>
-
-        <div class="principle-card fade-up" style="transition-delay:0.2s">
-  <span class="principle-icon" aria-hidden="true">⚙️</span>
-  <div class="principle-title">I build scalable processes</div>
-  <p class="principle-desc">Every workflow is designed to be repeatable, documented, and scalable, allowing ecommerce operations to grow efficiently without sacrificing accuracy or consistency.</p>
-</div>
-
-      </div>
+    <div class="principle-card fade-up">
+        <div class="principle-icon">📊</div>
+        <h3 class="principle-title">Data-Driven Decisions</h3>
+        <p class="principle-desc">
+            I use KPIs, reports, and performance metrics to guide decisions and continuously improve ecommerce operations.
+        </p>
     </div>
+
+    <div class="principle-card fade-up" style="transition-delay:.05s">
+        <div class="principle-icon">📈</div>
+        <h3 class="principle-title">Continuous Optimization</h3>
+        <p class="principle-desc">
+            I monitor marketplace performance, identify opportunities, and optimize listings, PPC campaigns, and workflows.
+        </p>
+    </div>
+
+    <div class="principle-card fade-up" style="transition-delay:.1s">
+        <div class="principle-icon">⚙️</div>
+        <h3 class="principle-title">Scalable Systems</h3>
+        <p class="principle-desc">
+            I build organized processes and documentation that help ecommerce businesses grow without operational chaos.
+        </p>
+    </div>
+
+    <div class="principle-card fade-up" style="transition-delay:.15s">
+        <div class="principle-icon">📦</div>
+        <h3 class="principle-title">Operational Excellence</h3>
+        <p class="principle-desc">
+            From inventory to catalog management, I focus on accuracy, consistency, and efficient daily execution.
+        </p>
+    </div>
+
+    <div class="principle-card fade-up" style="transition-delay:.2s">
+        <div class="principle-icon">🚀</div>
+        <h3 class="principle-title">Growth Mindset</h3>
+        <p class="principle-desc">
+            Every task should contribute to better visibility, stronger sales performance, or a smoother customer experience.
+        </p>
+    </div>
+
+    <div class="principle-card fade-up" style="transition-delay:.25s">
+        <div class="principle-icon">🤝</div>
+        <h3 class="principle-title">Proactive Ownership</h3>
+        <p class="principle-desc">
+            I anticipate issues, communicate early, and take ownership of outcomes instead of simply completing assigned tasks.
+        </p>
+    </div>
+
+</div>
   </section>
 
 <!-- ═══════════════════════════════════════════
