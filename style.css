@@ -2158,40 +2158,6 @@ footer{
    RESPONSIVE
 ═══════════════════════════════════════════════════════ */
 
-@media (max-width:960px){
-
-    .contact-grid{
-        grid-template-columns:1fr;
-        gap:56px;
-    }
-
-}
-
-@media (max-width:600px){
-
-    .form-row{
-        grid-template-columns:1fr;
-    }
-
-    .contact-form-wrap{
-        padding:26px;
-    }
-
-    .btn-form-submit{
-        width:100%;
-    }
-
-    .footer-inner{
-        flex-direction:column;
-        text-align:center;
-    }
-
-}
-
-/* ═══════════════════════════════════════════════════════
-   RESPONSIVE
-═══════════════════════════════════════════════════════ */
-
 @media (max-width:1024px){
 
     .services-grid{
@@ -2280,9 +2246,26 @@ footer{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .workflow-grid{
-        grid-template-columns:1fr;
+    /* ===== NEW HOW I WORK ===== */
+
+    .workflow{
+        gap:32px;
     }
+
+    .workflow-item{
+        grid-template-columns:1fr;
+        gap:18px;
+    }
+
+    .workflow-arrow{
+        display:none;
+    }
+
+    .workflow-item h3{
+        font-size:1.7rem;
+    }
+
+    /* ========================= */
 
     .tools-row{
         gap:10px;
@@ -2336,6 +2319,26 @@ footer{
         height:340px;
     }
 
+    /* ===== NEW HOW I WORK ===== */
+
+    .workflow{
+        gap:24px;
+    }
+
+    .workflow-item{
+        padding-bottom:18px;
+    }
+
+    .workflow-item h3{
+        font-size:1.5rem;
+    }
+
+    .workflow-item p{
+        font-size:14px;
+    }
+
+    /* ========================= */
+
     .form-row{
         grid-template-columns:1fr;
     }
@@ -2364,6 +2367,100 @@ footer{
 
 }
 
+   /* ═══════════════════════════════════════════════
+   ENGAGEMENT PROCESS
+═══════════════════════════════════════════════ */
+
+#how-i-work{
+    padding:var(--section-padding) 0;
+    background:var(--white);
+}
+
+.workflow{
+
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+    margin-top:70px;
+
+}
+
+.workflow-item{
+
+    display:grid;
+    grid-template-columns:140px 240px 1fr;
+    gap:48px;
+
+    align-items:flex-start;
+
+    padding-bottom:28px;
+
+}
+
+.workflow-top{
+
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+
+}
+
+.workflow-step{
+
+    font-family:var(--font-display);
+
+    font-size:14px;
+
+    letter-spacing:.35em;
+
+    color:var(--gold);
+
+}
+
+.workflow-line{
+
+    width:70px;
+    height:1px;
+
+    background:var(--gold);
+
+}
+
+.workflow-item h3{
+
+    font-family:var(--font-display);
+
+    font-size:2rem;
+
+    font-weight:400;
+
+    color:var(--near-black);
+
+}
+
+.workflow-item p{
+
+    max-width:620px;
+
+    color:var(--mid-gray);
+
+    font-size:15px;
+
+    line-height:1.9;
+
+}
+
+.workflow-arrow{
+
+    font-size:28px;
+
+    color:var(--gold);
+
+    margin-left:55px;
+
+    opacity:.5;
+
+}
 /* ═══════════════════════════════════════════════════════
    CASE STUDY PAGE
 ═══════════════════════════════════════════════════════ */
