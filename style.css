@@ -1281,21 +1281,15 @@ nav#main-nav.scrolled {
 ═══════════════════════════════════════════════ */
 
 #testimonials{
-
     padding:var(--section-padding) 0;
-
     background:var(--off-white);
-
 }
 
 .testimonials-grid{
-
     display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
-
+    grid-template-columns:repeat(3,1fr);
     gap:28px;
-
+    margin-top:60px;
 }
 
 .testimonial-card{
@@ -1304,10 +1298,12 @@ nav#main-nav.scrolled {
 
     border:1px solid var(--light-gray);
 
-    padding:36px;
+    padding:34px;
 
-    transition:all var(--transition);
+    transition:var(--transition);
 
+    display:flex;
+    flex-direction:column;
 }
 
 .testimonial-card:hover{
@@ -1320,47 +1316,23 @@ nav#main-nav.scrolled {
 
 }
 
-.testimonial-stars{
-
-    color:var(--gold);
-
-    font-size:16px;
-
-    letter-spacing:2px;
-
-    margin-bottom:20px;
-
-}
-
-.testimonial-quote{
-
-    font-size:15px;
-
-    color:var(--dark);
-
-    line-height:1.85;
-
-    margin-bottom:28px;
-
-}
-
-.testimonial-person{
+.testimonial-header{
 
     display:flex;
 
     align-items:center;
 
-    gap:14px;
+    gap:16px;
 
-    margin-top:auto;
+    margin-bottom:22px;
 
 }
 
-.testimonial-avatar{
+.testimonial-photo{
 
-    width:58px;
+    width:64px;
 
-    height:58px;
+    height:64px;
 
     border-radius:50%;
 
@@ -1368,15 +1340,15 @@ nav#main-nav.scrolled {
 
     object-position:center;
 
-    border:2px solid var(--gold-light);
-
     flex-shrink:0;
+
+    border:2px solid var(--gold-light);
 
 }
 
 .testimonial-name{
 
-    font-size:15px;
+    font-size:16px;
 
     font-weight:600;
 
@@ -1384,15 +1356,58 @@ nav#main-nav.scrolled {
 
 }
 
-.testimonial-role{
+.testimonial-position{
 
-    margin-top:4px;
-
-    font-size:12px;
+    font-size:13px;
 
     color:var(--mid-gray);
 
+    margin-top:4px;
+
 }
+
+.testimonial-stars{
+
+    color:var(--gold);
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+    margin-bottom:18px;
+
+}
+
+.testimonial-text{
+
+    color:var(--mid-gray);
+
+    font-size:15px;
+
+    line-height:1.9;
+
+}
+
+@media(max-width:1024px){
+
+    .testimonials-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .testimonials-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
 /* ═══════════════════════════════════════════════
    HOW I WORK
 ═══════════════════════════════════════════════ */
