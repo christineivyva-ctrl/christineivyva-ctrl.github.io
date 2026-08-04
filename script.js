@@ -40,7 +40,7 @@ function initMobileMenu() {
   const mobileMenu = document.getElementById('mobile-menu');
   if (!hamburger || !mobileMenu) return;
 
-  const open  = () => {
+  const open = () => {
     mobileMenu.classList.add('open');
     hamburger.classList.add('active');
     hamburger.setAttribute('aria-expanded', 'true');
@@ -205,25 +205,13 @@ function initSmoothScroll() {
 
 /* ══════════════════════════════════════════════════════
    CONTACT FORM — client-side validation + submit feedback
-   Wire up to a real backend (e.g. Formspree, EmailJS,
-   or a serverless function) by replacing handleSubmit.
    ══════════════════════════════════════════════════════ */
 function initContactForm() {
+  const form      = document.getElementById('contact-form') || document.querySelector('form');
   const submitBtn = document.getElementById('form-submit');
   const feedback  = document.getElementById('form-feedback');
+  
   if (!submitBtn) return;
-
-  submitBtn.addEventListener('click', handleSubmit);
-
-  // Allow pressing Enter in inputs to submit
-  ['fname', 'lname', 'email', 'service'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') handleSubmit();
-      });
-    }
-  });
 
   function getField(id) {
     const el = document.getElementById(id);
@@ -251,12 +239,12 @@ function initContactForm() {
       const el = document.getElementById(id);
       if (el) el.value = '';
     });
-    // Reset select to placeholder
     const select = document.getElementById('service');
     if (select) select.selectedIndex = 0;
   }
 
-  async function handleSubmit() {
+  async function handleSubmit(e) {
+    if (e) e.preventDefault();
     clearFeedback();
 
     const fname   = getField('fname');
@@ -292,18 +280,6 @@ function initContactForm() {
     submitBtn.textContent = 'Sending…';
 
     try {
-      /*
-       * ── INTEGRATION POINT ──────────────────────────────
-       * Replace the simulated delay below with your real
-       * form submission. Example using Formspree:
-       *
-       * const response = await fetch('https://formspree.io/f/YOUR_ID', {
-       *   method: 'POST',
-       *   headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-       *   body: JSON.stringify({ name: fname + ' ' + lname, email, service, message })
-       * });
-       * if (!response.ok) throw new Error('Network error');
-       * ────────────────────────────────────────────────── */
       await new Promise(resolve => setTimeout(resolve, 1000)); // simulated delay
 
       // ── SUCCESS ──
@@ -314,9 +290,9 @@ function initContactForm() {
 
       // Reset button after delay
       setTimeout(() => {
-        submitBtn.textContent      = 'Send Message →';
+        submitBtn.textContent        = 'Send Message →';
         submitBtn.style.background = '';
-        submitBtn.disabled         = false;
+        submitBtn.disabled           = false;
         clearFeedback();
       }, 5000);
 
@@ -326,6 +302,13 @@ function initContactForm() {
       submitBtn.disabled    = false;
       setFeedback('Something went wrong. Please email christineivy.va@gmail.com directly.', 'error');
     }
+  }
+
+  // Bind to form submit if available, otherwise bind to button click
+  if (form) {
+    form.addEventListener('submit', handleSubmit);
+  } else {
+    submitBtn.addEventListener('click', handleSubmit);
   }
 }
 
