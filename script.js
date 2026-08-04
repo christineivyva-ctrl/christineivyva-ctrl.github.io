@@ -1,338 +1,1792 @@
-/* ═══════════════════════════════════════════════════════
-   CHRISTINE IVY IRENEA — Portfolio JavaScript
-   script.js
-   ═══════════════════════════════════════════════════════ */
+<!DOCTYPE html>
 
-'use strict';
+<html lang="en">
 
-/* ── DOM READY ───────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', () => {
-  initNav();
-  initMobileMenu();
-  initHeroRule();
-  initScrollAnimations();
-  initCounters();
-  initSmoothScroll();
-  initContactForm();
-  initFooterYear();
-});
 
-/* ══════════════════════════════════════════════════════
-   STICKY NAV — adds .scrolled class for border + shadow
-   ══════════════════════════════════════════════════════ */
-function initNav() {
-  const nav = document.getElementById('main-nav');
-  if (!nav) return;
 
-  const onScroll = () => {
-    nav.classList.toggle('scrolled', window.scrollY > 40);
-  };
+<head>
 
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run once on load in case page is already scrolled
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+  <meta name="description"
+
+    content="Ecommerce Growth & Marketplace Operations Specialist with 7+ years of experience optimizing Amazon Seller Central, Shopify, product listings, Amazon SEO, PPC support, inventory management, and marketplace operations for growing ecommerce brands." />
+
+
+
+  <meta name="author" content="Christine Ivy Irenea" />
+
+
+
+  <meta name="keywords"
+
+    content="Amazon Seller Central, Shopify Operations, Ecommerce Operations, Marketplace Operations, Amazon SEO, Amazon PPC, Listing Optimization, Inventory Management, Catalog Management, Product Research, Competitor Research, Ecommerce Growth, Google Sheets, SOP Development, Process Improvement" />
+
+
+
+  <meta property="og:title"
+
+    content="Christine Ivy Irenea — Ecommerce Growth & Marketplace Operations Specialist" />
+
+
+
+  <meta property="og:description"
+
+    content="Helping ecommerce brands optimize Amazon Seller Central and Shopify operations through listing optimization, Amazon SEO, PPC support, inventory management, reporting, and process improvement." />
+
+
+
+  <meta property="og:type" content="website" />
+
+
+
+  <meta property="og:image"
+
+    content="https://christineivyva-ctrl.github.io/images/profile.png" />
+
+
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+
+
+  <meta name="twitter:title"
+
+    content="Christine Ivy Irenea — Ecommerce Growth & Marketplace Operations Specialist" />
+
+
+
+  <meta name="twitter:description"
+
+    content="Helping ecommerce brands improve marketplace performance through Amazon Seller Central, Shopify, listing optimization, PPC support, inventory management, and operational reporting." />
+
+
+
+  <meta name="twitter:image"
+
+    content="https://christineivyva-ctrl.github.io/images/profile.png" />
+
+
+
+  <title>
+
+    Christine Ivy Irenea | Ecommerce Growth & Marketplace Operations Specialist
+
+  </title>
+
+
+
+  <link rel="canonical" href="https://christineivyva-ctrl.github.io/" />
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+
+
+  <link
+
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+
+    rel="stylesheet" />
+
+
+
+  <link rel="stylesheet" href="style.css" />
+
+
+
+  <script type="application/ld+json">
+
+{
+
+  "@context":"https://schema.org",
+
+  "@type":"Person",
+
+  "name":"Christine Ivy Irenea",
+
+  "jobTitle":"Ecommerce Growth & Marketplace Operations Specialist",
+
+  "description":"Ecommerce Growth & Marketplace Operations Specialist with over 7 years of experience supporting Amazon Seller Central, Shopify, marketplace operations, Amazon SEO, PPC support, inventory management, catalog optimization, reporting, and process improvement.",
+
+  "email":"mailto:christineivy.va@gmail.com",
+
+  "sameAs":[
+
+    "https://linkedin.com/in/christine-ivy-irenea"
+
+  ]
+
 }
 
-/* ══════════════════════════════════════════════════════
-   MOBILE HAMBURGER MENU
-   ══════════════════════════════════════════════════════ */
-function initMobileMenu() {
-  const hamburger  = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  if (!hamburger || !mobileMenu) return;
+</script>
 
-  const open  = () => {
-    mobileMenu.classList.add('open');
-    hamburger.classList.add('active');
-    hamburger.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  };
 
-  const close = () => {
-    mobileMenu.classList.remove('open');
-    hamburger.classList.remove('active');
-    hamburger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
 
-  const toggle = () => mobileMenu.classList.contains('open') ? close() : open();
+</head>
 
-  hamburger.addEventListener('click', toggle);
 
-  // Close on any mobile link click
-  mobileMenu.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', close);
-  });
 
-  // Close when clicking outside
-  document.addEventListener('click', (e) => {
-    if (
-      mobileMenu.classList.contains('open') &&
-      !mobileMenu.contains(e.target) &&
-      !hamburger.contains(e.target)
-    ) {
-      close();
-    }
-  });
+<body>
 
-  // Close on Escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-      close();
-      hamburger.focus();
-    }
-  });
-}
 
-/* ══════════════════════════════════════════════════════
-   HERO GOLD RULE — draws itself on load
-   ══════════════════════════════════════════════════════ */
-function initHeroRule() {
-  const heroRule = document.getElementById('hero-rule');
-  if (!heroRule) return;
-  // Short delay so the page has rendered before animation starts
-  setTimeout(() => heroRule.classList.add('animate'), 700);
-}
 
-/* ══════════════════════════════════════════════════════
-   SCROLL ANIMATIONS — IntersectionObserver for .fade-up
-   and .gold-rule elements
-   ══════════════════════════════════════════════════════ */
-function initScrollAnimations() {
-  // Respect reduced-motion preference
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.fade-up').forEach(el => el.classList.add('visible'));
-    document.querySelectorAll('.gold-rule').forEach(el => el.classList.add('animate'));
-    return;
-  }
+  <!-- Skip Link -->
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          if (entry.target.classList.contains('gold-rule')) {
-            entry.target.classList.add('animate');
-          }
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-  );
+  <a href="#hero" class="skip-link">
 
-  document.querySelectorAll('.fade-up, .gold-rule').forEach(el => observer.observe(el));
-}
+    Skip to content
 
-/* ══════════════════════════════════════════════════════
-   ANIMATED COUNTERS — triggers when stat enters viewport
-   Uses cubic ease-out for a natural deceleration feel
-   ══════════════════════════════════════════════════════ */
-function initCounters() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    // Just show final values immediately
-    document.querySelectorAll('[data-target]').forEach(el => {
-      el.textContent = el.dataset.target + (el.dataset.suffix || '');
-    });
-    return;
-  }
+  </a>
 
-  const DURATION = 1600; // ms
 
-  function animateCounter(el) {
-    const target  = parseInt(el.dataset.target, 10);
-    const suffix  = el.dataset.suffix || '';
-    const start   = performance.now();
 
-    const update = (now) => {
-      const elapsed  = now - start;
-      const progress = Math.min(elapsed / DURATION, 1);
-      // Cubic ease-out
-      const eased    = 1 - Math.pow(1 - progress, 3);
-      const current  = Math.floor(eased * target);
+  <!-- Floating WhatsApp -->
 
-      el.textContent = current + suffix;
+  <a href="https://api.whatsapp.com/send?phone=639079512928&text=Hi%20Christine%2C%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect."
 
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = target + suffix; // ensure exact final value
-      }
-    };
+    target="_blank"
 
-    requestAnimationFrame(update);
-  }
+    rel="noopener noreferrer"
 
-  const counterObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
+    class="floating-wa"
 
-  document.querySelectorAll('[data-target]').forEach(el => counterObserver.observe(el));
-}
+    aria-label="Chat on WhatsApp">
 
-/* ══════════════════════════════════════════════════════
-   SMOOTH SCROLL — intercepts all anchor links and offsets
-   for the fixed nav height
-   ══════════════════════════════════════════════════════ */
-function initSmoothScroll() {
-  const NAV_OFFSET = 72; // matches --nav-h in CSS
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const href   = anchor.getAttribute('href');
-      if (href === '#') return; // ignore bare # links
 
-      const target = document.querySelector(href);
-      if (!target) return;
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white" aria-hidden="true">
 
-      e.preventDefault();
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
 
-      const targetTop = target.getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
-      window.scrollTo({ top: targetTop, behavior: 'smooth' });
+    </svg>
 
-      // Update URL without triggering a jump
-      history.pushState(null, '', href);
-    });
-  });
-}
 
-/* ══════════════════════════════════════════════════════
-   CONTACT FORM — client-side validation + submit feedback
-   Wire up to a real backend (e.g. Formspree, EmailJS,
-   or a serverless function) by replacing handleSubmit.
-   ══════════════════════════════════════════════════════ */
-function initContactForm() {
-  const submitBtn = document.getElementById('form-submit');
-  const feedback  = document.getElementById('form-feedback');
-  if (!submitBtn) return;
 
-  submitBtn.addEventListener('click', handleSubmit);
+  </a>
 
-  // Allow pressing Enter in inputs to submit
-  ['fname', 'lname', 'email', 'service'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter') handleSubmit();
-      });
-    }
-  });
 
-  function getField(id) {
-    const el = document.getElementById(id);
-    return el ? el.value.trim() : '';
-  }
 
-  function setFeedback(message, type) {
-    if (!feedback) return;
-    feedback.textContent   = message;
-    feedback.className     = 'form-feedback ' + type;
-  }
+  <!-- Navigation -->
 
-  function clearFeedback() {
-    if (!feedback) return;
-    feedback.textContent = '';
-    feedback.className   = 'form-feedback';
-  }
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
 
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
 
-  function resetForm() {
-    ['fname', 'lname', 'email', 'service', 'message'].forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.value = '';
-    });
-    // Reset select to placeholder
-    const select = document.getElementById('service');
-    if (select) select.selectedIndex = 0;
-  }
 
-  async function handleSubmit() {
-    clearFeedback();
+    <div class="nav-inner">
 
-    const fname   = getField('fname');
-    const lname   = getField('lname');
-    const email   = getField('email');
-    const service = getField('service');
-    const message = getField('message');
 
-    // Validation
-    if (!fname) {
-      setFeedback('Please enter your first name.', 'error');
-      document.getElementById('fname')?.focus();
-      return;
-    }
-    if (!email) {
-      setFeedback('Please enter your email address.', 'error');
-      document.getElementById('email')?.focus();
-      return;
-    }
-    if (!isValidEmail(email)) {
-      setFeedback('Please enter a valid email address.', 'error');
-      document.getElementById('email')?.focus();
-      return;
-    }
-    if (!message) {
-      setFeedback('Please tell Christine a bit about your needs.', 'error');
-      document.getElementById('message')?.focus();
-      return;
-    }
 
-    // ── SENDING STATE ──
-    submitBtn.disabled   = true;
-    submitBtn.textContent = 'Sending…';
+      <a href="#hero" class="nav-logo">
 
-    try {
-      /*
-       * ── INTEGRATION POINT ──────────────────────────────
-       * Replace the simulated delay below with your real
-       * form submission. Example using Formspree:
-       *
-       * const response = await fetch('https://formspree.io/f/YOUR_ID', {
-       *   method: 'POST',
-       *   headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-       *   body: JSON.stringify({ name: fname + ' ' + lname, email, service, message })
-       * });
-       * if (!response.ok) throw new Error('Network error');
-       * ────────────────────────────────────────────────── */
-      await new Promise(resolve => setTimeout(resolve, 1000)); // simulated delay
+        Christine <span>Ivy</span>
 
-      // ── SUCCESS ──
-      submitBtn.textContent = 'Message Sent ✓';
-      submitBtn.style.background = 'var(--green-ok)';
-      setFeedback("Thanks! Christine will get back to you within 24 hours.", 'success');
-      resetForm();
+      </a>
 
-      // Reset button after delay
-      setTimeout(() => {
-        submitBtn.textContent      = 'Send Message →';
-        submitBtn.style.background = '';
-        submitBtn.disabled         = false;
-        clearFeedback();
-      }, 5000);
 
-    } catch (err) {
-      console.error('Form submission error:', err);
-      submitBtn.textContent = 'Send Message →';
-      submitBtn.disabled    = false;
-      setFeedback('Something went wrong. Please email christineivy.va@gmail.com directly.', 'error');
-    }
-  }
-}
 
-/* ══════════════════════════════════════════════════════
-   FOOTER YEAR — keeps copyright current automatically
-   ══════════════════════════════════════════════════════ */
-function initFooterYear() {
-  const el = document.getElementById('footer-year');
-  if (el) el.textContent = new Date().getFullYear();
-}
+      <ul class="nav-links" role="list">
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#services">Expertise</a></li>
+
+        <li><a href="#projects">Case Studies</a></li>
+
+        <li><a href="#tools">Tools & Tech Stack</a></li>
+
+        <li><a href="#experience">Experience</a></li>
+
+        <li><a href="#certifications">Certifications</a></li>
+
+        <li><a href="#contact" class="nav-cta">Let's Connect</a></li>
+
+      </ul>
+
+
+
+      <button
+
+        class="hamburger"
+
+        id="hamburger"
+
+        aria-label="Open navigation menu"
+
+        aria-expanded="false">
+
+
+
+        <span></span>
+
+        <span></span>
+
+        <span></span>
+
+
+
+      </button>
+
+
+
+    </div>
+
+
+
+  </nav>
+
+
+
+  <!-- Mobile Menu -->
+
+  <div
+
+    class="mobile-menu"
+
+    id="mobile-menu"
+
+    role="dialog"
+
+    aria-label="Mobile navigation">
+
+
+
+    <a href="#about" class="mobile-link">About</a>
+
+    <a href="#services" class="mobile-link">Expertise</a>
+
+    <a href="#projects" class="mobile-link">Case Studies</a>
+
+    <a href="#tools" class="mobile-link">Tools & Tech Stack</a>
+
+    <a href="#experience" class="mobile-link">Experience</a>
+
+    <a href="#certifications" class="mobile-link">Certifications</a>
+
+    <a href="#contact" class="mobile-link">Let's Connect</a>
+
+
+
+  </div>
+
+
+
+  <!-- ══════════════════════════════════════════
+
+       HERO — rewritten around business outcomes, not tasks
+
+  ══════════════════════════════════════════ -->
+
+<section id="hero" aria-label="Introduction">
+
+
+
+  <div class="hero-left">
+
+
+
+    <div class="hero-eyebrow fade-up">
+
+      <div class="hero-eyebrow-line"></div>
+
+      <span>Ecommerce Growth | Marketplace Operations | Amazon & Shopify Specialist</span>
+
+    </div>
+
+
+
+    <h1 class="hero-name fade-up" style="transition-delay:0.1s">
+
+      Christine<br><em>Ivy Irenea</em>
+
+    </h1>
+
+
+
+    <p class="hero-role fade-up" style="transition-delay:0.18s">
+
+      Helping Ecommerce Brands Scale Through Operational Excellence
+
+    </p>
+
+
+
+    <div class="gold-rule" id="hero-rule"></div>
+
+
+
+    <p class="hero-desc fade-up" style="transition-delay:0.25s">
+
+      I help ecommerce brands optimize Amazon Seller Central and Shopify operations through listing optimization, Amazon SEO, PPC support, inventory management, operational reporting, and process improvement—so business owners can focus on growth while their marketplace operations run efficiently.
+
+    </p>
+
+
+
+    <div class="hero-actions fade-up" style="transition-delay:0.32s">
+
+
+
+      <a href="#contact" class="btn-primary">
+
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+
+        </svg>
+
+        Let's Work Together
+
+      </a>
+
+
+
+      <a href="resume/christine-ivy-irenea.pdf"
+
+         target="_blank"
+
+         rel="noopener noreferrer"
+
+         class="btn-outline">
+
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+
+          <circle cx="12" cy="12" r="3"/>
+
+        </svg>
+
+        View My CV
+
+      </a>
+
+
+
+      <a href="resume/christine-ivy-irenea.pdf"
+
+         download
+
+         class="btn-outline">
+
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+
+        </svg>
+
+        Download CV
+
+      </a>
+
+
+
+    </div>
+
+
+
+    <div class="hero-stats fade-up" style="transition-delay:0.4s">
+
+
+
+      <div class="hero-stat">
+
+        <div class="hero-stat-num" data-target="100" data-suffix="+">0</div>
+
+        <div class="hero-stat-label">
+
+          Product Listings Optimized
+
+        </div>
+
+      </div>
+
+
+
+      <div class="hero-stat">
+
+        <div class="hero-stat-num" data-target="40" data-suffix="+">0</div>
+
+        <div class="hero-stat-label">
+
+          Orders Managed Weekly
+
+        </div>
+
+      </div>
+
+
+
+      <div class="hero-stat">
+
+        <div class="hero-stat-num" data-target="200" data-suffix="+">0</div>
+
+        <div class="hero-stat-label">
+
+          Applicant Records Organized &amp; Managed
+
+        </div>
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+  <div class="hero-right">
+
+
+
+    <div class="hero-image-wrap fade-up" style="transition-delay:0.2s">
+
+
+
+      <img
+
+        src="images/profile.png"
+
+        alt="Christine Ivy Irenea, Ecommerce Growth & Marketplace Operations Specialist" />
+
+
+
+      <div class="hero-availability">
+
+        <span class="avail-dot"></span>
+
+        <span class="avail-text">
+
+          Available for new clients
+
+        </span>
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+</section>
+
+ 
+
+  <!-- ══════════════════════════════════════════
+
+       ABOUT — tightened ~25%, systems/ownership-focused;
+
+       logistics (office/internet/timezone) moved to Quick Facts below
+
+  ══════════════════════════════════════════ -->
+
+  <section id="about" aria-label="About Christine">
+
+    <div class="container">
+
+      <div class="about-grid">
+
+
+
+        <div class="about-image-wrap fade-up">
+
+          <div class="about-image-frame">
+
+            <img src="images/about.png" alt="Christine Ivy Irenea at work" loading="lazy" decoding="async" />
+
+          </div>
+
+          <!-- UPDATED: 4+ years corrected to 7+ years per current resume -->
+
+          <div class="about-image-badge">
+
+            <div class="about-badge-num" data-target="7" data-suffix="+">7+</div>
+
+            <div class="about-badge-label">Years in Ecommerce &amp; Business Ops</div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="about-text fade-up" style="transition-delay:0.15s">
+
+          <span class="section-label">About Christine</span>
+
+          <h2 class="section-title">The Operations Partner Behind Scalable Ecommerce Growth</h2>
+
+          <p>I'm an Ecommerce Growth & Marketplace Operations Specialist with 7+ years of experience supporting Amazon Seller Central, Shopify, Shopee, Lazada, and TikTok Shop. I help ecommerce brands optimize listings, improve operational workflows, manage inventory, support PPC initiatives, and build scalable systems that keep marketplace operations running efficiently..</p>
+
+          <p>From managing 100+ product listings and coordinating cross-platform catalog updates to building dashboards, documenting SOPs, and improving internal processes, I focus on creating reliable systems that reduce operational friction and allow business owners to concentrate on growth.</p>
+
+          <p>I believe good operations should be invisible. The best systems quietly remove friction, so the people running the business can spend their time on strategy instead of fixing the same problem twice.</p>
+
+          <!-- UPDATED: pillars reframed around systems thinking, ownership, documentation, and business impact -->
+
+          <div class="about-pillars">
+
+            <div class="about-pillar">
+
+              <div class="about-pillar-title">Systems-Minded</div>
+
+              <p>I build organized, documented workflows and processes your team can run without me in the room.</p>
+
+            </div>
+
+            <div class="about-pillar">
+
+              <div class="about-pillar-title">Ownership-Driven</div>
+
+              <p>I treat problems as mine to solve — flagging issues early instead of waiting to be asked.</p>
+
+            </div>
+
+            <div class="about-pillar">
+
+              <div class="about-pillar-title">Documentation-First</div>
+
+              <p>Every process I touch gets written down, so institutional knowledge doesn't live in one inbox.</p>
+
+            </div>
+
+            <div class="about-pillar">
+
+              <div class="about-pillar-title">Built to Scale</div>
+
+              <p>The systems I set up are designed to hold up as order volume, headcount, or complexity grows.</p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ══════════════════════════════════════════
+
+       NEW SECTION: QUICK FACTS
+
+       Logistics details moved out of About, into their own scannable block.
+
+       Reuses .about-pillars / .about-pillar for visual consistency with the About section above.
+
+  ══════════════════════════════════════════ -->
+
+  <section id="quick-facts" aria-label="Quick Facts">
+
+    <div class="container">
+
+      <span class="section-label fade-up">At a Glance</span>
+
+      <h2 class="section-title fade-up">Ready to plug in from day one</h2>
+
+      <div class="about-pillars fade-up" style="transition-delay:0.1s">
+
+        <div class="about-pillar">
+
+          <div class="about-pillar-title">🏠 Dedicated Workspace</div>
+
+          <p>Dedicated, quiet home office set up for focused work and client calls.</p>
+
+        </div>
+
+        <div class="about-pillar">
+
+          <div class="about-pillar-title">🌐 Reliable Internet</div>
+
+          <p>PLDT Fiber 300 Mbps with Globe/Smart mobile data backup.</p>
+
+        </div>
+
+        <div class="about-pillar">
+
+          <div class="about-pillar-title">🕒 Timezone Coverage</div>
+
+          <p>Full-time availability aligned with US EST and PST business hours.</p>
+
+        </div>
+
+        <div class="about-pillar">
+
+          <div class="about-pillar-title">💻 Professional Setup</div>
+
+          <p>HD webcam and noise-canceling headset — ready for calls and screen shares from day one.</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+<!-- ══════════════════════════════════════════
+
+     ENGAGEMENT PROCESS
+
+══════════════════════════════════════════ -->
+
+<section id="how-i-work">
+
+
+
+    <div class="container">
+
+
+
+        <span class="section-label fade-up">
+
+            Engagement Process
+
+        </span>
+
+
+
+        <h2 class="section-title fade-up">
+
+            A structured approach.<br>
+
+            Calm execution.
+
+        </h2>
+
+
+
+        <div class="workflow">
+
+
+
+            <div class="workflow-item fade-up">
+
+
+
+                <div class="workflow-top">
+
+                    <span class="workflow-step">01</span>
+
+                    <div class="workflow-line"></div>
+
+                </div>
+
+
+
+                <h3>Discover</h3>
+
+
+
+                <p>
+
+                    Understand your business, current operations, priorities,
+
+                    and long-term goals before making recommendations.
+
+                </p>
+
+
+
+            </div>
+
+
+
+            <div class="workflow-arrow">↓</div>
+
+
+
+            <div class="workflow-item fade-up" style="transition-delay:.08s">
+
+
+
+                <div class="workflow-top">
+
+                    <span class="workflow-step">02</span>
+
+                    <div class="workflow-line"></div>
+
+                </div>
+
+
+
+                <h3>Analyze</h3>
+
+
+
+                <p>
+
+                    Review Amazon, Shopify, inventory, reporting,
+
+                    documentation, and existing workflows to uncover
+
+                    operational opportunities.
+
+                </p>
+
+
+
+            </div>
+
+
+
+            <div class="workflow-arrow">↓</div>
+
+
+
+            <div class="workflow-item fade-up" style="transition-delay:.16s">
+
+
+
+                <div class="workflow-top">
+
+                    <span class="workflow-step">03</span>
+
+                    <div class="workflow-line"></div>
+
+                </div>
+
+
+
+                <h3>Execute</h3>
+
+
+
+                <p>
+
+                    Build reliable systems, optimize listings,
+
+                    organize operations, and document scalable processes.
+
+                </p>
+
+
+
+            </div>
+
+
+
+            <div class="workflow-arrow">↓</div>
+
+
+
+            <div class="workflow-item fade-up" style="transition-delay:.24s">
+
+
+
+                <div class="workflow-top">
+
+                    <span class="workflow-step">04</span>
+
+                    <div class="workflow-line"></div>
+
+                </div>
+
+
+
+                <h3>Optimize</h3>
+
+
+
+                <p>
+
+                    Continuously improve performance through reporting,
+
+                    KPI monitoring, process refinement, and proactive support.
+
+                </p>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+<!-- ══════════════════════════════════════════
+
+     OPERATING PRINCIPLES
+
+══════════════════════════════════════════ -->
+
+<section id="principles" aria-label="Operating Principles">
+
+  <div class="container">
+
+
+
+    <span class="section-label fade-up">
+
+      Operating Principles
+
+    </span>
+
+
+
+    <h2 class="section-title fade-up">
+
+      The standards I bring to every ecommerce operation
+
+    </h2>
+
+
+
+    <p class="section-intro fade-up" style="transition-delay:.05s">
+
+      Beyond daily tasks, these are the principles that guide how I build systems, support growth, and help ecommerce businesses operate efficiently.
+
+    </p>
+
+
+
+    <div class="principles-grid">
+
+
+
+      <div class="principle-card fade-up">
+
+        <div class="principle-icon">📊</div>
+
+        <h3 class="principle-title">Data-Driven Decisions</h3>
+
+        <p class="principle-desc">
+
+          I use KPIs, reports, and performance metrics to guide decisions and continuously improve ecommerce operations.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="principle-card fade-up" style="transition-delay:.05s">
+
+        <div class="principle-icon">📈</div>
+
+        <h3 class="principle-title">Continuous Optimization</h3>
+
+        <p class="principle-desc">
+
+          I monitor marketplace performance, identify opportunities, and optimize listings, PPC campaigns, and workflows.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="principle-card fade-up" style="transition-delay:.10s">
+
+        <div class="principle-icon">⚙️</div>
+
+        <h3 class="principle-title">Scalable Systems</h3>
+
+        <p class="principle-desc">
+
+          I build organized processes and documentation that help ecommerce businesses grow without operational chaos.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="principle-card fade-up" style="transition-delay:.15s">
+
+        <div class="principle-icon">📦</div>
+
+        <h3 class="principle-title">Operational Excellence</h3>
+
+        <p class="principle-desc">
+
+          From inventory to catalog management, I focus on accuracy, consistency, and efficient daily execution.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="principle-card fade-up" style="transition-delay:.20s">
+
+        <div class="principle-icon">🚀</div>
+
+        <h3 class="principle-title">Growth Mindset</h3>
+
+        <p class="principle-desc">
+
+          Every task should contribute to better visibility, stronger sales performance, or a smoother customer experience.
+
+        </p>
+
+      </div>
+
+
+
+      <div class="principle-card fade-up" style="transition-delay:.25s">
+
+        <div class="principle-icon">🤝</div>
+
+        <h3 class="principle-title">Proactive Ownership</h3>
+
+        <p class="principle-desc">
+
+          I anticipate issues, communicate early, and take ownership of outcomes instead of simply completing assigned tasks.
+
+        </p>
+
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════
+
+     EXPERTISE
+
+═══════════════════════════════════════════ -->
+
+<section id="services" aria-label="Core Expertise">
+
+  <div class="container">
+
+
+
+    <span class="section-label fade-up">
+
+      Expertise
+
+    </span>
+
+
+
+    <h2 class="section-title fade-up">
+
+      Marketplace Operations Expertise
+
+    </h2>
+
+
+
+    <p class="section-intro fade-up" style="transition-delay:.05s">
+
+      I help ecommerce brands streamline operations, improve marketplace performance, and build systems that support sustainable growth across Amazon, Shopify, and other ecommerce platforms.
+
+    </p>
+
+
+
+    <div class="services-grid">
+
+
+
+      <!-- CARD 1 -->
+
+      <article class="service-card fade-up">
+
+        <span class="service-num">01</span>
+
+
+
+        <div class="service-icon">🛒</div>
+
+
+
+        <h3 class="service-title">
+
+          Amazon Seller Central Operations
+
+        </h3>
+
+
+
+        <p class="service-desc">
+
+          Manage product listings, catalog structure, parent-child variations, Seller Support cases, account health, inventory monitoring, and daily marketplace operations that keep Amazon stores running efficiently.
+
+        </p>
+
+
+
+        <div class="service-tags">
+
+          <span class="tag">Seller Central</span>
+
+          <span class="tag">Catalog</span>
+
+          <span class="tag">Account Health</span>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- CARD 2 -->
+
+      <article class="service-card fade-up" style="transition-delay:.08s">
+
+
+
+        <span class="service-num">02</span>
+
+
+
+        <div class="service-icon">🔍</div>
+
+
+
+        <h3 class="service-title">
+
+          Amazon SEO & Listing Optimization
+
+        </h3>
+
+
+
+        <p class="service-desc">
+
+          Optimize listings using keyword research, competitor analysis, backend search terms, titles, bullet points, product descriptions, and catalog enhancements that improve discoverability and conversions.
+
+        </p>
+
+
+
+        <div class="service-tags">
+
+          <span class="tag">Amazon SEO</span>
+
+          <span class="tag">Keyword Research</span>
+
+          <span class="tag">Helium 10</span>
+
+        </div>
+
+
+
+      </article>
+
+
+
+      <!-- CARD 3 -->
+
+      <article class="service-card fade-up" style="transition-delay:.16s">
+
+
+
+        <span class="service-num">03</span>
+
+
+
+        <div class="service-icon">📈</div>
+
+
+
+        <h3 class="service-title">
+
+          Amazon PPC Support
+
+        </h3>
+
+
+
+        <p class="service-desc">
+
+          Monitor advertising campaigns, optimize bids and keywords, and analyze KPIs including ACoS, CTR, CPC, ROAS, and conversion rates to improve advertising performance.
+
+        </p>
+
+
+
+        <div class="service-tags">
+
+          <span class="tag">PPC</span>
+
+          <span class="tag">ACoS</span>
+
+          <span class="tag">ROAS</span>
+
+        </div>
+
+
+
+      </article>
+
+
+
+      <!-- CARD 4 -->
+
+      <article class="service-card fade-up" style="transition-delay:.24s">
+
+
+
+        <span class="service-num">04</span>
+
+
+
+        <div class="service-icon">🛍️</div>
+
+
+
+        <h3 class="service-title">
+
+          Shopify Store Management
+
+        </h3>
+
+
+
+        <p class="service-desc">
+
+          Manage products, collections, pricing, inventory, orders, storefront organization, and day-to-day Shopify operations that support a seamless customer experience.
+
+        </p>
+
+
+
+        <div class="service-tags">
+
+          <span class="tag">Shopify</span>
+
+          <span class="tag">Products</span>
+
+          <span class="tag">Orders</span>
+
+        </div>
+
+
+
+      </article>
+
+
+
+      <!-- CARD 5 -->
+
+      <article class="service-card fade-up" style="transition-delay:.32s">
+
+
+
+        <span class="service-num">05</span>
+
+
+
+        <div class="service-icon">📦</div>
+
+
+
+        <h3 class="service-title">
+
+          Inventory & Marketplace Operations
+
+        </h3>
+
+
+
+        <p class="service-desc">
+
+          Maintain inventory accuracy, coordinate replenishment, manage fulfillment workflows, and support operations across Amazon, Shopify, Shopee, Lazada, and TikTok Shop.
+
+        </p>
+
+
+
+        <div class="service-tags">
+
+          <span class="tag">Inventory</span>
+
+          <span class="tag">Marketplace Ops</span>
+
+          <span class="tag">Fulfillment</span>
+
+        </div>
+
+
+
+      </article>
+
+
+
+      <!-- CARD 6 -->
+
+      <article class="service-card fade-up" style="transition-delay:.40s">
+
+
+
+        <span class="service-num">06</span>
+
+
+
+        <div class="service-icon">📊</div>
+
+
+
+        <h3 class="service-title">
+
+          Reporting & Process Improvement
+
+        </h3>
+
+
+
+        <p class="service-desc">
+
+          Build KPI dashboards, automate reporting, document SOPs, improve workflows, and create operational systems that help businesses make better decisions and scale efficiently.
+
+        </p>
+
+
+
+        <div class="service-tags">
+
+          <span class="tag">Dashboards</span>
+
+          <span class="tag">Google Sheets</span>
+
+          <span class="tag">SOPs</span>
+
+        </div>
+
+
+
+      </article>
+
+
+
+    </div>
+
+
+
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+
+     CASE STUDIES
+
+══════════════════════════════════════════ -->
+
+<section id="projects" aria-label="Featured Case Studies">
+
+  <div class="container">
+
+
+
+    <span class="section-label fade-up">
+
+      Case Studies
+
+    </span>
+
+
+
+    <h2 class="section-title fade-up">
+
+      Marketplace Operations in Action
+
+    </h2>
+
+
+
+    <p class="section-intro fade-up" style="transition-delay:.05s">
+
+      Representative projects showcasing operational systems, marketplace optimization, reporting, and scalable ecommerce processes across Amazon and Shopify.
+
+    </p>
+
+
+
+    <div class="projects-grid">
+
+
+
+      <!-- AMAZON ================================================= -->
+
+
+
+      <article class="project-card project-card--featured fade-up">
+
+
+
+        <div class="project-img">
+
+
+
+          <img
+
+            src="images/case-amazon-dashboard.png"
+
+            alt="Amazon Executive Dashboard"
+
+            loading="lazy"
+
+            decoding="async">
+
+
+
+          <a href="./case-study/amazon-marketplace.html"
+
+             class="project-overlay">
+
+
+
+            <span class="project-overlay-label">
+
+              View Case Study →
+
+            </span>
+
+
+
+          </a>
+
+
+
+        </div>
+
+
+
+        <div class="project-body">
+
+
+
+          <div class="project-category">
+
+            Amazon Seller Central • Marketplace Operations • Amazon SEO
+
+          </div>
+
+
+
+          <h3 class="project-title">
+
+            Amazon Marketplace Growth & Operations
+
+          </h3>
+
+
+
+          <p class="project-desc">
+
+            Managed daily Amazon Seller Central operations including listing optimization, catalog management, keyword research, PPC support, inventory monitoring, account health, and operational reporting to improve marketplace efficiency.
+
+          </p>
+
+
+
+          <span class="project-result">
+
+            Improved catalog quality, marketplace visibility, operational reporting, and inventory management through scalable processes.
+
+          </span>
+
+
+
+        </div>
+
+
+
+      </article>
+
+
+
+
+
+      <!-- SHOPIFY ================================================= -->
+
+
+
+      <article class="project-card fade-up"
+
+               style="transition-delay:.10s">
+
+
+
+        <div class="project-img">
+
+
+
+          <img
+
+            src="images/case-shopify-dashboard.png"
+
+            alt="Shopify Operations Dashboard"
+
+            loading="lazy"
+
+            decoding="async">
+
+
+
+          <a href="./case-study/shopify-operations.html"
+
+             class="project-overlay">
+
+
+
+            <span class="project-overlay-label">
+
+              View Case Study →
+
+            </span>
+
+
+
+          </a>
+
+
+
+        </div>
+
+
+
+        <div class="project-body">
+
+
+
+          <div class="project-category">
+
+            Shopify Administration • Ecommerce Operations
+
+          </div>
+
+
+
+          <h3 class="project-title">
+
+            Shopify Store Operations & Catalog Management
+
+          </h3>
+
+
+
+          <p class="project-desc">
+
+            Managed Shopify catalogs, product uploads, collections, pricing, inventory synchronization, fulfillment coordination, and storefront organization while supporting SEO and day-to-day ecommerce operations.
+
+          </p>
+
+
+
+          <span class="project-result">
+
+            Maintained accurate catalogs, reliable fulfillment workflows, inventory consistency, and streamlined store operations.
+
+          </span>
+
+
+
+        </div>
+
+
+
+      </article>
+
+
+
+
+
+      <!-- REPORTING =============================================== -->
+
+
+
+      <article class="project-card fade-up"
+
+               style="transition-delay:.20s">
+
+
+
+        <div class="project-img">
+
+
+
+          <img
+
+            src="images/case-operations-dashboard.png"
+
+            alt="Executive Operations Dashboard"
+
+            loading="lazy"
+
+            decoding="async">
+
+
+
+          <a href="./case-study/operational-reporting.html"
+
+             class="project-overlay">
+
+
+
+            <span class="project-overlay-label">
+
+              View Case Study →
+
+            </span>
+
+
+
+          </a>
+
+
+
+        </div>
+
+
+
+        <div class="project-body">
+
+
+
+          <div class="project-category">
+
+            Operations Reporting • KPI Dashboards • Process Improvement
+
+          </div>
+
+
+
+          <h3 class="project-title">
+
+            Executive Operations Dashboard & Reporting
+
+          </h3>
+
+
+
+          <p class="project-desc">
+
+            Designed executive dashboards, KPI scorecards, operational reports, SOP documentation, and workflow systems that improved visibility, reporting accuracy, and business decision-making.
+
+          </p>
+
+
+
+          <span class="project-result">
+
+            Delivered executive-ready dashboards, standardized reporting, and scalable operational systems for growing ecommerce businesses.
+
+          </span>
+
+
+
+        </div>
+
+
+
+      </article>
+
+
+
+    </div>
+
+
+
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════
+
+     TESTIMONIALS
+
+══════════════════════════════════════════ -->
+
+
+
+<section id="testimonials" aria-label="Client Testimonials">
+
+
+
+    <div class="container">
+
+
+
+        <span class="section-label fade-up">
+
+            Testimonials
+
+        </span>
+
+
+
+        <h2 class="section-title fade-up">
+
+            Trusted by Founders & Business Leaders
+
+        </h2>
+
+
+
+        <p class="section-desc fade-up">
+
+            Long-term partnerships are built through reliability,
+
+            ownership, and consistently delivering results that help
+
+            businesses grow.
+
+        </p>
+
+
+
+        <div class="testimonials-grid">
+
+
+
+            <!-- ======================= -->
+
+
+
+            <article class="testimonial-card fade-up">
+
+
+
+                <div class="testimonial-header">
+
+
+
+                    <img
+
+                        src="images/testimonial-sarah.jpg"
+
+                        alt="Sarah Jane Rivero"
+
+                        class="testimonial-photo"
+
+                    >
+
+
+
+                    <div>
+
+
+
+                        <div class="testimonial-name">
+
+                            Sarah Jane Rivero
+
+                        </div>
+
+
+
+                        <div class="testimonial-position">
+
+                            CEO • IPTS Health & Wellness
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="testimonial-stars">
+
+                    ★★★★★
+
+                </div>
+
+
+
+                <p class="testimonial-text">
+
+                    "Working with Christine for the past seven years has been one of the strongest pillars of our business growth. Her consistency, organization, and dedication in managing our ecommerce operations have helped us scale with better systems and smoother workflows."
+
+                </p>
+
+
+
+            </article>
+
+
+
+            <!-- ======================= -->
+
+
+
+            <article class="testimonial-card fade-up" style="transition-delay:.1s">
+
+
+
+                <div class="testimonial-header">
+
+
+
+                    <img
+
+                        src="images/testimonial-patrice.jpg"
+
+                        alt="Patrice Verdillo Roslin"
+
+                        class="testimonial-photo"
+
+                    >
+
+
+
+                    <div>
+
+
+
+                        <div class="testimonial-name">
+
+                            Patrice Verdillo Roslin
+
+                        </div>
+
+
+
+                        <div class="testimonial-position">
+
+                            Talent 
+
